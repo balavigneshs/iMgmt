@@ -132,11 +132,11 @@ namespace iMgmt
 
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
-            int val1 = 0;
-            int val2 = 0;
-            int.TryParse(txtPrice.Text, out val1);
-            int.TryParse(txtQty.Text, out val2);
-            int I = (val1 * val2);
+            double val1 = 0;
+            double val2 = 0;
+            double.TryParse(txtPrice.Text, out val1);
+            double.TryParse(txtQty.Text, out val2);
+            double I = Math.Ceiling(val1 * val2);
             txtTotalPrice.Text = I.ToString();
         }
         private void Reset()

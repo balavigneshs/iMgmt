@@ -179,11 +179,11 @@ namespace iMgmt
 
         private void txtSaleQty_TextChanged(object sender, EventArgs e)
         {
-            int val1 = 0;
-            int val2 = 0;
-            int.TryParse(txtPrice.Text, out val1);
-            int.TryParse(txtSaleQty.Text, out val2);
-            int I = (val1 * val2);
+            double val1 = 0;
+            double val2 = 0;
+            double.TryParse(txtPrice.Text, out val1);
+            double.TryParse(txtSaleQty.Text, out val2);
+            double I = Math.Ceiling(val1 * val2);
             txtTotalAmount.Text = I.ToString();
         }
 
@@ -228,7 +228,7 @@ namespace iMgmt
                     txtSaleQty.Focus();
                     return;
                 }
-                int SaleQty = Convert.ToInt32(txtSaleQty.Text);
+                double SaleQty = Convert.ToDouble(txtSaleQty.Text);
                 if (SaleQty == 0)
                 {
                     MessageBox.Show("no. of sale quantity can not be zero", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -266,8 +266,8 @@ namespace iMgmt
                         ListView1.Items[j].SubItems[1].Text = txtConfigID.Text;
                         ListView1.Items[j].SubItems[2].Text = txtProductName.Text;
                         ListView1.Items[j].SubItems[3].Text = txtPrice.Text;
-                        ListView1.Items[j].SubItems[4].Text = (Convert.ToInt32(ListView1.Items[j].SubItems[4].Text) + Convert.ToInt32(txtSaleQty.Text)).ToString();
-                        ListView1.Items[j].SubItems[5].Text = (Convert.ToInt32(ListView1.Items[j].SubItems[5].Text) + Convert.ToInt32(txtTotalAmount.Text)).ToString();
+                        ListView1.Items[j].SubItems[4].Text = (Convert.ToDouble(ListView1.Items[j].SubItems[4].Text) + Convert.ToDouble(txtSaleQty.Text)).ToString();
+                        ListView1.Items[j].SubItems[5].Text = (Convert.ToDouble(ListView1.Items[j].SubItems[5].Text) + Convert.ToDouble(txtTotalAmount.Text)).ToString();
                         txtSubTotal.Text = subtot().ToString();
                         txtProductName.Text = "";
                         txtConfigID.Text = "";
@@ -564,10 +564,10 @@ namespace iMgmt
         private void txtSaleQty_Validating(object sender, CancelEventArgs e)
         {
 
-            int val1 = 0;
-            int val2 = 0;
-            int.TryParse(txtAvailableQty.Text, out val1);
-            int.TryParse(txtSaleQty.Text, out val2);
+            double val1 = 0;
+            double val2 = 0;
+            double.TryParse(txtAvailableQty.Text, out val1);
+            double.TryParse(txtSaleQty.Text, out val2);
             if (val2 > val1)
             {
                 MessageBox.Show("Selling quantities are more than available quantities", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
