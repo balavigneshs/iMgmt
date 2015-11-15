@@ -270,9 +270,9 @@ namespace iMgmt
 
             foreach (DataGridViewRow r in this.DataGridView1.Rows)
             {
-                Int64 i = Convert.ToInt64(r.Cells[4].Value);
-                Int64 j = Convert.ToInt64(r.Cells[5].Value);
-                Int64 k = Convert.ToInt64(r.Cells[6].Value);
+                Int64 i = Convert.ToInt64(r.Cells[7].Value); //Get Grand Total
+                Int64 j = Convert.ToInt64(r.Cells[8].Value); //Get Total Payment
+                Int64 k = Convert.ToInt64(r.Cells[9].Value); //Get Payment Due
                 sum = sum + i;
                 sum1 = sum1 + j;
                 sum2 = sum2 + k; 
@@ -310,9 +310,9 @@ namespace iMgmt
 
             foreach (DataGridViewRow r in this.DataGridView3.Rows)
             {
-                Int64 i = Convert.ToInt64(r.Cells[4].Value);
-                Int64 j = Convert.ToInt64(r.Cells[5].Value);
-                Int64 k = Convert.ToInt64(r.Cells[6].Value);
+                Int64 i = Convert.ToInt64(r.Cells[7].Value); //Get Grand Total
+                Int64 j = Convert.ToInt64(r.Cells[8].Value); //Get Total Payment
+                Int64 k = Convert.ToInt64(r.Cells[9].Value); //Get Payment Due
                 sum = sum + i;
                 sum1 = sum1 + j;
                 sum2 = sum2 + k;
@@ -349,9 +349,12 @@ namespace iMgmt
 
                 foreach (DataGridViewRow r in this.DataGridView2.Rows)
                 {
-                    Int64 i = Convert.ToInt64(r.Cells[4].Value);
-                    Int64 j = Convert.ToInt64(r.Cells[5].Value);
-                    Int64 k = Convert.ToInt64(r.Cells[6].Value);
+                    //Int64 i = Convert.ToInt64(r.Cells[4].Value);
+                    //Int64 j = Convert.ToInt64(r.Cells[5].Value);
+                    //Int64 k = Convert.ToInt64(r.Cells[6].Value);
+                    Int64 i = Convert.ToInt64(r.Cells[7].Value); //Get Grand Total
+                    Int64 j = Convert.ToInt64(r.Cells[8].Value); //Get Total Payment
+                    Int64 k = Convert.ToInt64(r.Cells[9].Value); //Get Payment Due
                     sum = sum + i;
                     sum1 = sum1 + j;
                     sum2 = sum2 + k;
